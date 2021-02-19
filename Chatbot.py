@@ -121,4 +121,4 @@ class MyClient(discord.Client):
             while 1 == 1:
                 await message.author.send("Destroy!!")
 client = MyClient()
-client.run(Token)
+client.run(os.environ["token"])
