@@ -3,6 +3,8 @@ import os
 import random
 from random import choice
 import time
+from datetime import date
+
 
 class MyClient(discord.Client):
     #Einloggen
@@ -38,7 +40,7 @@ class MyClient(discord.Client):
             await message.channel.send(Fuck)  
         #Wie gehts?
         message.content = message.content.upper()
-        if message.content.startswith("WIE GEHTS?") or message.content.startswith("WIE GEHT ES DIR?") or message.content.startswith("WIE GEHT´S?") or message.content.startswith("WIE GEHTS @CHATBOT?") or message.content.startswith("WIE GEHT ES DIR @CHATBOT?") or message.content.startswith("WIE GEHTS? @CHATBOT") or message.content.startswith("WIE GEHT ES DIR? @CHATBOT") or message.content.startswith("WIE GEHTS ?") or message.content.startswith("WIE GEHT ES DIR ?") or message.content.startswith("WIE GEHT´S DIR?"):
+        if message.content.startswith("WIE GEHTS?") or message.content.startswith("WIE GEHT ES DIR?") or message.content.startswith("WIE GEHT´S?") or message.content.startswith("WIE GEHTS @CHATBOT?") or message.content.startswith("WIE GEHT ES DIR @CHATBOT?") or message.content.startswith("WIE GEHTS? @CHATBOT") or message.content.startswith("WIE GEHT ES DIR? @CHATBOT") or message.content.startswith("WIE GEHTS ?") or message.content.startswith("WIE GEHT ES DIR ?") or message.content.startswith("WIE GEHT´S DIR?") or message.content.startswith("WAS GEHT?"):
             Befinden = ["Seit wann hat ein Bot Gefühle?", "Bin ein Bot.🙄", "Ich bin nicht autorisiert Gefühle zu haben"]
             Befinden = random.choice(Befinden)
             time.sleep(1.5)
@@ -99,6 +101,18 @@ class MyClient(discord.Client):
             await message.channel.send("Da mir mein Meister keine Sensoren oder Kamera gegeben hat kann ich es schlecht sagen.")
             time.sleep(1.5)
             await message.channel.send("Welche Farbe magst du denn am meisten?")
+        #Geburstag
+        if message.content.startswith("WIE ALT BIST DU?") or message.content.startswith("WIE ALT BIST DU EIGENTLICHT?") or message.content.startswith("WANN HAST DU GEBURTSTAG?") or message.content.startswith("WANN HAT DU EIGENTLICHT GEBURTSTAG?") or message.content.startswith("WANN HAST DU GEBURSTAG?") or message.content.startswith("WANN HAT DU EIGENTLICHT GEBURSTAG?"):
+            heute = date.today()
+            geburtstag = date(2021,2,17)
+            alter = heute - geburtstag
+            geburtstag = geburtstag.strftime("%d.%b.%Y")
+            time.sleep(1.5)
+            await message.channel.send("Ich muss kurz nachrechnen...")
+            time.sleep(2)
+            await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(alter.days) + " Tag alt.")
+            time.sleep(1.5)
+            await message.channel.send("Dass müsste eigentlich richtig sein")
         #
 
 
