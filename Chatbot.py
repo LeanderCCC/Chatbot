@@ -3,8 +3,6 @@ import os
 import random
 from random import choice
 import time
-from datetime import date
-
 
 class MyClient(discord.Client):
     #Einloggen
@@ -95,18 +93,6 @@ class MyClient(discord.Client):
             await message.channel.send("Elektrizität und Daten. Deins?")
             time.sleep(10)                
             await message.channel.send("Cool!")
-        #Geburstag
-        if message.content.startswith("WIE ALT BIST DU?") or message.content.startswith("WIE ALT BIST DU EIGENTLICHT?") or message.content.startswith("WANN HAST DU GEBURTSTAG?") or message.content.startswith("WANN HAT DU EIGENTLICHT GEBURTSTAG?") or message.content.startswith("WANN HAST DU GEBURSTAG?") or message.content.startswith("WANN HAT DU EIGENTLICHT GEBURSTAG?"):
-            heute = date.today()
-            geburtstag = date(2021,2,17)
-            alter = heute - geburtstag
-            geburtstag = geburtstag.strftime("%d.%b.%Y")
-            time.sleep(1.5)
-            await message.channel.send("Ich muss kurz nachrechnen...")
-            time.sleep(2)
-            await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(alter.days) + " Tag alt.")
-            time.sleep(1.5)
-            await message.channel.send("Dass müsste eigentlich richtig sein")
         #Lieblingsfarbe
         if message.content.startswith("LIEBLINGSFARBE?") or message.content.startswith("WAS IST DEINE LIEBLINGSFARBE?") or message.content.startswith("WELCHE FAREBE?") or message.content.startswith("WELCHE FAREBE MAGST DU AM MEISTEN?"):
             time.sleep(1.5)
