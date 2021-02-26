@@ -21,10 +21,6 @@ class MyClient(discord.Client):
             if str(message.author) == "LeanderC#7166":
                 time.sleep(1)
                 await message.channel.send("Ja Meister?🥰")
-                time.sleep(0.75)
-                await message.channel.send("Wie kann ich ihnen Dienen?👅😏🥴")
-                time.sleep(0.5)
-                await message.channel.send("🍑🍆💦")
             else:
                 Hallo = ["Hi", "Hallo", "Moin", "Hi was geht?", "Servus", "Guten Tag", "Ich Grüße sie"]
                 Hallo = random.choice(Hallo)
