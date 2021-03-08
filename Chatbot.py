@@ -40,7 +40,7 @@ class MyClient(discord.Client):
             Befinden = ["Seit wann hat ein Bot Gefühle?", "Bin ein Bot.🙄", "Ich bin nicht autorisiert Gefühle zu haben"]
             Befinden = random.choice(Befinden)
             time.sleep(1.5)
-            await message.channel.send(Befinden)
+            await message.channel.send(Befinden) 
         #Zocken?
         if message.content.startswith("ZOCKEN?") or message.content.startswith("WILLST DU ZOCKEN?") or message.content.startswith("WOLLEN WIR ZOCKEN?") or message.content.startswith("DADDELN?") or message.content.startswith("ZOCKEN") or message.content.startswith("DADDELN") or message.content.startswith("WOLLEN WIR ZOCKEN ?") or message.content.startswith("DADDELN ?") or message.content.startswith("SPIELST DU MIT MIR?") or message.content.startswith("SPIELEN?"):
             Zocken = ["@LeanderC erlaubt mir das Leider nicht.😔", "Darf nicht.🙄", "Kann doch nicht.🙄 Bin doch ein Chatbot.", "Sry, darf und will nicht.😔", "Leider bin ich ein Chatbot und bin somit nicht dafür geschaffen.😔", "Sry, muss mich um meine Arbeit Kümmern.😔 Aber @LeanderC möchte vielleicht Zocken?"]
