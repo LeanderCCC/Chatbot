@@ -5,7 +5,6 @@ from random import choice
 import time
 from datetime import date
 
-
 class MyClient(discord.Client):
     #Einloggen
     async def on_ready(self):
