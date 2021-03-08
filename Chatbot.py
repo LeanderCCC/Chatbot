@@ -10,7 +10,7 @@ class MyClient(discord.Client):
     #Einloggen
     async def on_ready(self):
         print("Ich habe mich eingeloggt(Chatbot)")
-
+ 
     #Wenn Nachricht geschrieben wird
     async def on_message(self, message):
         if message.author == client.user:
