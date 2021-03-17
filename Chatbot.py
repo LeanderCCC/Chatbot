@@ -99,7 +99,7 @@ class MyClient(discord.Client):
         #Geburstag
         if message.content.startswith("WIE ALT BIST DU?") or message.content.startswith("WIE ALT BIST DU EIGENTLICHT?") or message.content.startswith("WANN HAST DU GEBURTSTAG?") or message.content.startswith("WANN HAT DU EIGENTLICHT GEBURTSTAG?") or message.content.startswith("WANN HAST DU GEBURSTAG?") or message.content.startswith("WANN HAT DU EIGENTLICHT GEBURSTAG?"):
             heute = date.today()
-            geburtstag = date(2021,2,17)
+            geburtstag = date(2021,2,17) 
             alter = heute - geburtstag
             geburtstag = geburtstag.strftime("%d.%b.%Y")
             time.sleep(1.5)
