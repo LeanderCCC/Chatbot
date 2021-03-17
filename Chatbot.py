@@ -24,8 +24,7 @@ class MyClient(discord.Client):
                 Hallo = ["Hi", "Hallo", "Moin", "Hi was geht?", "Servus", "Guten Tag", "Ich Grüße sie"]
                 Hallo = random.choice(Hallo)
                 time.sleep(1.5)
-                message.author = message.author[-6:]
-                await message.channel.send(Hallo + " " + str(message.author))
+                await message.channel.send(Hallo + " " + message.author[:-6])
         elif message.content.startswith("HELLO"):
             time.sleep(1.5)
             await message.channel.send("German Please")
