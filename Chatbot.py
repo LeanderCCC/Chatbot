@@ -14,6 +14,9 @@ class MyClient(discord.Client):
     async def on_message(self, message):
         if message.author == client.user:
             return
+        print(str(message.author)+' schrieb: "'+str(message.content)+'"')
+        schreiber = str(message.author)
+        schreiber = schreiber[:-5]
         #Hallo Nachrichten
         message.content = message.content.upper()
         if message.content.startswith("HI") or message.content.startswith("HALLO") or message.content.startswith("SERVUS") or message.content.startswith("GUTEN TAG") or message.content.startswith("MOIN"):
@@ -24,7 +27,7 @@ class MyClient(discord.Client):
                 Hallo = ["Hi", "Hallo", "Moin", "Hi was geht?", "Servus", "Guten Tag", "Ich Grüße sie"]
                 Hallo = random.choice(Hallo)
                 time.sleep(1.5)
-                await message.channel.send(Hallo + " " + str(message.author[:-6]))
+                await message.channel.send(Hallo + " " + str(schreiber))
         elif message.content.startswith("HELLO"):
             time.sleep(1.5)
             await message.channel.send("German Please")
@@ -39,7 +42,7 @@ class MyClient(discord.Client):
             Befinden = ["Seit wann hat ein Bot Gefühle?", "Bin ein Bot.🙄", "Ich bin nicht autorisiert Gefühle zu haben"]
             Befinden = random.choice(Befinden)
             time.sleep(1.5)
-            await message.channel.send(Befinden) 
+            await message.channel.send(Befinden)
         #Zocken?
         if message.content.startswith("ZOCKEN?") or message.content.startswith("WILLST DU ZOCKEN?") or message.content.startswith("WOLLEN WIR ZOCKEN?") or message.content.startswith("DADDELN?") or message.content.startswith("ZOCKEN") or message.content.startswith("DADDELN") or message.content.startswith("WOLLEN WIR ZOCKEN ?") or message.content.startswith("DADDELN ?") or message.content.startswith("SPIELST DU MIT MIR?") or message.content.startswith("SPIELEN?"):
             Zocken = ["@LeanderC erlaubt mir das Leider nicht.😔", "Darf nicht.🙄", "Kann doch nicht.🙄 Bin doch ein Chatbot.", "Sry, darf und will nicht.😔", "Leider bin ich ein Chatbot und bin somit nicht dafür geschaffen.😔", "Sry, muss mich um meine Arbeit Kümmern.😔 Aber @LeanderC möchte vielleicht Zocken?"]
@@ -99,7 +102,7 @@ class MyClient(discord.Client):
         #Geburstag
         if message.content.startswith("WIE ALT BIST DU?") or message.content.startswith("WIE ALT BIST DU EIGENTLICHT?") or message.content.startswith("WANN HAST DU GEBURTSTAG?") or message.content.startswith("WANN HAT DU EIGENTLICHT GEBURTSTAG?") or message.content.startswith("WANN HAST DU GEBURSTAG?") or message.content.startswith("WANN HAT DU EIGENTLICHT GEBURSTAG?"):
             heute = date.today()
-            geburtstag = date(2021,2,17) 
+            geburtstag = date(2021,2,17)
             alter = heute - geburtstag
             geburtstag = geburtstag.strftime("%d.%b.%Y")
             time.sleep(1.5)
@@ -109,6 +112,7 @@ class MyClient(discord.Client):
             time.sleep(1.5)
             await message.channel.send("Dass müsste eigentlich richtig sein")
         #
+
 
         #Maine Arschloch
         if message.content.startswith("MAINE ARSCHLOCH") or message.content.startswith("MEINE ARSCHLOCH") or message.content.startswith("MAINE ARSCHLOCH!") or message.content.startswith("MEINE ARSCHLOCH"):
