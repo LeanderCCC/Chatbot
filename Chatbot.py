@@ -110,7 +110,7 @@ class MyClient(discord.Client):
             time.sleep(2)
             await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(alter.days) + " Tage alt.")
             time.sleep(1.5)
-            await message.channel.send("Dass müsste eigentlich richtig sein")
+            await message.channel.send("Das müsste eigentlich richtig sein")
         #
 
         #Maine Arschloch
