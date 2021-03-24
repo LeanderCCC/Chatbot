@@ -113,7 +113,6 @@ class MyClient(discord.Client):
             await message.channel.send("Dass müsste eigentlich richtig sein")
         #
 
-
         #Maine Arschloch
         if message.content.startswith("MAINE ARSCHLOCH") or message.content.startswith("MEINE ARSCHLOCH") or message.content.startswith("MAINE ARSCHLOCH!") or message.content.startswith("MEINE ARSCHLOCH"):
             while 1 == 1:
