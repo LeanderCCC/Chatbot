@@ -9,7 +9,7 @@ class MyClient(discord.Client):
     #Einloggen
     async def on_ready(self):
         print("Ich habe mich eingeloggt(Chatbot)")
-   
+
     #Wenn Nachricht geschrieben wird
     async def on_message(self, message):
         if message.author == client.user:
@@ -112,6 +112,7 @@ class MyClient(discord.Client):
             time.sleep(1.5)
             await message.channel.send("Das müsste eigentlich richtig sein")
         #
+
 
         #Maine Arschloch
         if message.content.startswith("MAINE ARSCHLOCH") or message.content.startswith("MEINE ARSCHLOCH") or message.content.startswith("MAINE ARSCHLOCH!") or message.content.startswith("MEINE ARSCHLOCH"):
