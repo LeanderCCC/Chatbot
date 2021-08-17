@@ -122,6 +122,9 @@ class MyClient(discord.Client):
         if message.content.startswith("DESTROY"):
             while 1 == 1:
                 await message.author.send("Destroy!!")
+        #Version         
+        if message.content.startswith("WELCHE VERSION?") or message.content.startswith("CHATBOT VERSION?") or message.content.startswith("WELCHE VERSION") or message.content.startswith("CHATBOT VERSION"):
+            await message.channel.send("1.3")
                 
 client = MyClient()
 client.run(os.environ["token"])
