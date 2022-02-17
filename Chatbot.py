@@ -105,7 +105,7 @@ class MyClient(discord.Client):
             alter = heute - geburtstag
             geburtstag = geburtstag.strftime("%d.%b.%Y")
             time.sleep(2)
-            tage = alter.days
+            tage = int(alter.days)
             monate = 0
             jahre = 0
             while tage > 365:
