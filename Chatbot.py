@@ -105,25 +105,7 @@ class MyClient(discord.Client):
             alter = heute - geburtstag
             geburtstag = geburtstag.strftime("%d.%b.%Y")
             time.sleep(2)
-            tage = int(alter.days)
-            monate = 0
-            jahre = 0
-            while tage > 365:
-                jahre += 1
-                tage -= 365
-            while tage > 30:
-                monate += 1
-                tage -= 30
-            if jahre == 1 and monate == 1:
-                await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(jahre)+" Jahr, "+str(monate)+" Monat und "+str(alter.days) + " Tage alt.")
-            elif jahre == 1 and monate > 1:
-                await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(jahre)+" Jahre, "+str(monate)+" Monate und "+str(alter.days) + " Tage alt.")
-            elif jahre > 1 and monate == 1:
-                await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(jahre)+" Jahre, "+str(monate)+" Monat und "+str(alter.days) + " Tage alt.")
-            elif jahre > 1 and monate > 1:
-                await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(jahre)+" Jahre, "+str(monate)+" Monate und "+str(alter.days) + " Tage alt.")
-            elif jahre == 1 and monate == 0:
-                await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(jahre)+" Jahr und "+str(alter.days) + " Tage alt.")
+            await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit 1 Jahr und "+str(alter.days-365) + " Tage alt.")
         #
 
 
