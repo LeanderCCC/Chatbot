@@ -87,7 +87,6 @@ class MyClient(discord.Client):
         #
 
 
-
         #Lieblingsessen
         if message.content.startswith("WAS IST DEIN LIEBLINGSESSEN?") or message.content.startswith("LIEBLINGSESSEN?"):
             await message.channel.send("Elektrizität und Daten. Deins?")
@@ -105,12 +104,26 @@ class MyClient(discord.Client):
             geburtstag = date(2021,2,17)
             alter = heute - geburtstag
             geburtstag = geburtstag.strftime("%d.%b.%Y")
-            time.sleep(1.5)
-            await message.channel.send("Ich muss kurz nachrechnen...")
             time.sleep(2)
-            await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(alter.days) + " Tage alt.")
-            time.sleep(1.5)
-            await message.channel.send("Das müsste eigentlich richtig sein")
+            tage = alter.days
+            monate = 0
+            jahre = 0
+            while tage > 365:
+                jahre += 1
+                tage -= 365
+            while tage > 30:
+                monate += 1
+                tage -= 30
+            if jahre == 1 and monate == 1:
+                await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(jahre)+" Jahr, "+str(monate)+" Monat und "+str(alter.days) + " Tage alt.")
+            elif jahre == 1 and monate > 1:
+                await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(jahre)+" Jahre, "+str(monate)+" Monate und "+str(alter.days) + " Tage alt.")
+            elif jahre > 1 and monate == 1:
+                await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(jahre)+" Jahre, "+str(monate)+" Monat und "+str(alter.days) + " Tage alt.")
+            elif jahre > 1 and monate > 1:
+                await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(jahre)+" Jahre, "+str(monate)+" Monate und "+str(alter.days) + " Tage alt.")
+            elif jahre == 1 and monate == 0:
+                await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(jahre)+" Jahr und "+str(alter.days) + " Tage alt.")
         #
 
 
@@ -123,9 +136,9 @@ class MyClient(discord.Client):
             while 1 == 1:
                 await message.author.send("Destroy!!")
         #Version         
-        if message.content.startswith("WELCHE VERSION?") or message.content.startswith("CHATBOT VERSION?") or message.content.startswith("WELCHE VERSION") or message.content.startswith("CHATBOT VERSION"):
+        if message.content.startswith("WELCHE VERSION?") or message.content.startswith("CHATBOT VERSION?") or message.content.startswith("WELCHE VERSION") or message.content.startswith("CHATBOT VERSION") or message.content.startswith("BOT VERSION"):
             time.sleep(1)
-            await message.channel.send("1.3")
+            await message.channel.send("1.5")
                 
 client = MyClient()
 client.run(os.environ["token"])
