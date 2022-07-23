@@ -1,1 +1,1 @@
-worker: python Chatbot.py
+worker: node Chatbot.py

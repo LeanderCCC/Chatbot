@@ -5,6 +5,7 @@ from random import choice
 import time
 from datetime import date
 
+
 class MyClient(discord.Client):
     #Einloggen
     async def on_ready(self):
@@ -104,8 +105,12 @@ class MyClient(discord.Client):
             geburtstag = date(2021,2,17)
             alter = heute - geburtstag
             geburtstag = geburtstag.strftime("%d.%b.%Y")
+            time.sleep(1.5)
+            await message.channel.send("Ich muss kurz nachrechnen...")
             time.sleep(2)
-            await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit 1 Jahr und "+str(alter.days-365) + " Tage alt.")
+            await message.channel.send("Ich wurde am "+str(geburtstag)+" von meinem Meister erschaffen und bin somit "+str(alter.days) + " Tage alt.")
+            time.sleep(1.5)
+            await message.channel.send("Das müsste eigentlich richtig sein")
         #
 
 
@@ -117,10 +122,6 @@ class MyClient(discord.Client):
         if message.content.startswith("DESTROY"):
             while 1 == 1:
                 await message.author.send("Destroy!!")
-        #Version         
-        if message.content.startswith("WELCHE VERSION?") or message.content.startswith("CHATBOT VERSION?") or message.content.startswith("WELCHE VERSION") or message.content.startswith("CHATBOT VERSION") or message.content.startswith("BOT VERSION"):
-            time.sleep(1)
-            await message.channel.send("1.5")
-                
 client = MyClient()
-client.run(os.environ["token"])
+client.run("ODExNDk2NDg0NzU0MjkyNzY2.YCzC_g.x9DLQpAZ4o1x09BTx_2dbrtstaY")
+#os.environ["token"]
