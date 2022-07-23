@@ -122,6 +122,7 @@ class MyClient(discord.Client):
         if message.content.startswith("DESTROY"):
             while 1 == 1:
                 await message.author.send("Destroy!!")
+                
+                
 client = MyClient()
-client.run("ODExNDk2NDg0NzU0MjkyNzY2.YCzC_g.x9DLQpAZ4o1x09BTx_2dbrtstaY")
-#os.environ["token"]
+os.environ["token"]
